@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -9,22 +9,14 @@ namespace EmbedTest
     public static void Main(string[] args)
     {
       Console.WriteLine("Hello World!");
-      var sn = SystemSerialNumber ();
-      Console.WriteLine ("System Serialn Number: {0}", sn);
     }
 
-    public static void CallbackTest()
+    public static void CallSystemSerialNumber()
     {
-      CallbackA(1,2.5);
-      CallbackB("yo");
+      var sn = SystemSerialNumber ();
+      Console.WriteLine ("System Serial Number: {0}", sn);
     }
 
-
-    [DllImport("__Internal", CallingConvention=CallingConvention.Cdecl )]
-    internal static extern void CallbackA(int i, double d);
-
-    [DllImport("__Internal", CallingConvention=CallingConvention.Cdecl )]
-    internal static extern void CallbackB([MarshalAs(UnmanagedType.LPWStr)]string s);
 
     static string SystemSerialNumber ()
     {

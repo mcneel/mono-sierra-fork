@@ -1,12 +1,16 @@
 #include <string>
 #include <dlfcn.h>
 #include <stdio.h>
+#include <unistd.h>
 
-// TODO: Change these two paths for your own system
-// using lame hard coded paths because I'm lazy and just want to get a sample put together
-const char* MONO_64_PATH = "/Users/bozo/Projects/Rhino5Commercial/src4/rhino4/MacOS/Mono64Framework/Mono.framework";
-const char* EMBED_TEST_PATH = "/Users/bozo/dev/mono_embed/EmbedTest/bin/Debug/EmbedTest.exe";
 
+#define XAMARIN_MONO
+
+#ifdef XAMARIN_MONO
+const char* MONO_64_PATH = "/Library/Frameworks/Mono.framework/Versions/Current";
+#else
+const char* MONO_64_PATH = "/Applications/Rhinoceros.app/Contents/Frameworks/Mono64Rhino.framework/Versions/Current";
+#endif
 
 // Mono types/functions used for embedding
 struct MonoDomain;
@@ -87,14 +91,22 @@ int main (int argc, char* argv[])
 {
   printf("Starting embed test\n");
 
+  printf ("MONO_64_PATH:       %s\n", MONO_64_PATH);
+
   if( !InitializeMonoForOSX(MONO_64_PATH) )
     return 1;
   
-  MonoDomain* app_domain = mono_jit_init_version(EMBED_TEST_PATH, "v4.0");
+  // A build step puts EmbedTest.exe in the same directory as the executable.  Get path to EmbedTest.exe.
+  char embedTestPath[2000];
+  getcwd (embedTestPath, sizeof(embedTestPath));
+  strcat (embedTestPath, "/EmbedTest.exe");     // Never use strcat!  Memory corruption possible!  8^)
+  printf ("EmbedTest.exe path: %s\n", embedTestPath);
+
+  MonoDomain* app_domain = mono_jit_init_version(embedTestPath, "v4.0");
   if( nullptr == app_domain )
     return 1;
  
-  MonoAssembly* assembly = mono_domain_assembly_open( app_domain, EMBED_TEST_PATH);
+  MonoAssembly* assembly = mono_domain_assembly_open( app_domain, embedTestPath);
   if( nullptr == assembly )
     return 1;
   
@@ -106,7 +118,7 @@ int main (int argc, char* argv[])
   if( nullptr == mono_class )
     return 1;
   
-  MonoMethod* method = mono_class_get_method_from_name( mono_class, "CallbackTest", -1 );
+  MonoMethod* method = mono_class_get_method_from_name( mono_class, "CallSystemSerialNumber", -1 );
   if( nullptr == method )
     return 1;
   

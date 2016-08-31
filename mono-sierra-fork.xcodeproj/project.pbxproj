@@ -15,7 +15,7 @@
 		D602C19F1BC843EC0047179A /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		D69C920F1BCC13D300198A49 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		DFE15B351D777E25008B4C4A /* Program.cs */ = {isa = PBXFileReference; lastKnownFileType = text; name = Program.cs; path = EmbedTest/Program.cs; sourceTree = "<group>"; };
-		DFEA66DE1BC718D2004BB10E /* mono_sierra-fork */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "mono_sierra-fork"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFEA66DE1BC718D2004BB10E /* mono-sierra-fork */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "mono-sierra-fork"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +43,7 @@
 		DFEA66DF1BC718D2004BB10E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DFEA66DE1BC718D2004BB10E /* mono_sierra-fork */,
+				DFEA66DE1BC718D2004BB10E /* mono-sierra-fork */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -51,9 +51,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DFEA66DD1BC718D2004BB10E /* mono_sierra-fork */ = {
+		DFEA66DD1BC718D2004BB10E /* mono-sierra-fork */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DFEA66E51BC718D2004BB10E /* Build configuration list for PBXNativeTarget "mono_sierra-fork" */;
+			buildConfigurationList = DFEA66E51BC718D2004BB10E /* Build configuration list for PBXNativeTarget "mono-sierra-fork" */;
 			buildPhases = (
 				DFEA66DA1BC718D2004BB10E /* Sources */,
 				DFEA66DB1BC718D2004BB10E /* Frameworks */,
@@ -64,9 +64,9 @@
 			);
 			dependencies = (
 			);
-			name = "mono_sierra-fork";
+			name = "mono-sierra-fork";
 			productName = monoEmbed;
-			productReference = DFEA66DE1BC718D2004BB10E /* mono_sierra-fork */;
+			productReference = DFEA66DE1BC718D2004BB10E /* mono-sierra-fork */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -83,7 +83,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DFEA66D91BC718D2004BB10E /* Build configuration list for PBXProject "mono_sierra-fork" */;
+			buildConfigurationList = DFEA66D91BC718D2004BB10E /* Build configuration list for PBXProject "mono-sierra-fork" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -95,7 +95,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DFEA66DD1BC718D2004BB10E /* mono_sierra-fork */,
+				DFEA66DD1BC718D2004BB10E /* mono-sierra-fork */,
 			);
 		};
 /* End PBXProject section */
@@ -249,7 +249,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DFEA66D91BC718D2004BB10E /* Build configuration list for PBXProject "mono_sierra-fork" */ = {
+		DFEA66D91BC718D2004BB10E /* Build configuration list for PBXProject "mono-sierra-fork" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DFEA66E31BC718D2004BB10E /* Debug */,
@@ -258,7 +258,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DFEA66E51BC718D2004BB10E /* Build configuration list for PBXNativeTarget "mono_sierra-fork" */ = {
+		DFEA66E51BC718D2004BB10E /* Build configuration list for PBXNativeTarget "mono-sierra-fork" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DFEA66E61BC718D2004BB10E /* Debug */,

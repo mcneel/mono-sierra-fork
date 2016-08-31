@@ -4,13 +4,7 @@
 #include <unistd.h>
 
 
-#define XAMARIN_MONO
-
-#ifdef XAMARIN_MONO
 const char* MONO_64_PATH = "/Library/Frameworks/Mono.framework/Versions/Current";
-#else
-const char* MONO_64_PATH = "/Applications/Rhinoceros.app/Contents/Frameworks/Mono64Rhino.framework/Versions/Current";
-#endif
 
 // Mono types/functions used for embedding
 struct MonoDomain;
